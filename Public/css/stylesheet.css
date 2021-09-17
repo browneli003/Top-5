@@ -1,0 +1,9 @@
+
+li {
+    display: inline;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+ }
