@@ -29,7 +29,7 @@ Votes.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        vote: {
+        item_name: {
             type: DataTypes.STRING
         }
     },
