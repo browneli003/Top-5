@@ -9,6 +9,8 @@ User.hasMany(Topics, {
 
 Topics.belongsTo(User, {
     foreignKey: 'user_id'
-})
+});
+
+User.belongsToMany()
 
 module.exports = { Topics, User, Votes };
