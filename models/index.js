@@ -7,10 +7,27 @@ User.hasMany(Topics, {
     foreignKey: 'user_id'
 });
 
-Topics.belongsTo(User, {
+User.hasMany(Votes, {
     foreignKey: 'user_id'
 });
 
-User.belongsToMany()
+// Topics.belongsTo(User, {
+//     foreignKey: ''
+// });
+
+
+
+
+
+
+
+
+
+User.belongsToMany(Topics, {
+    through: Votes,
+    foreignKey: 'user_id'
+});
+
+
 
 module.exports = { Topics, User, Votes };
