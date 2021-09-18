@@ -6,10 +6,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--CSS link-->
-<link rel="Public\css\stylesheet.css"
-
-<!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,23 +15,36 @@
 <body>
     <!-- navigation -->
     <header>
-        <ul><li><h1>Top 5</h1></li>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Top 5</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Email">
+          <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Password">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </form>
+      </nav>
+        <h1>
+          Top 5
+        </h1>
         <nav>
-            <form class="login-form">
-               <li><div>
-                  <label for="email-login">email:</label>
-                  <input type="text" id="email-login" />
-                </div>
-                <div>
-                  <label for="password-login">password:</label>
-                  <input type="password" id="password-login" />
-                </div>
-                <div>
-                  <button type="submit">login</button>
-                </div></li> 
-              </form>
-        </nav></ul>
-    </header>
+          <form class="login-form">
+             <li><div>
+                <label for="email-login">email:</label>
+                <input type="text" id="email-login" />
+              </div>
+              <div>
+                <label for="password-login">password:</label>
+                <input type="password" id="password-login" />
+              </div>
+              <div>
+                <button type="submit"></button>
+              </div></li> 
+            </form>
+      </nav></ul>
+  </header>
+      
+        <ul><li><h1>Top 5</h1></li>
+
     <main>
       <div class="row">
         <div class="col-sm-4">
@@ -82,6 +91,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <!--CSS-->
+        <link rel="styles" href="Public/css/stylesheet.css">
 </body>
 
 </html>
