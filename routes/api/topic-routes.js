@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Topics } = require('../../models');
+const { update } = require('../../models/Topics');
 
 // The `/api/topics` endpoint
 
@@ -8,9 +9,9 @@ router.get('/', (req, res) => {
   // find all topics
   Topics.findAll({
     attributes: [
+      'id',
      'topic',
-     'vote_tally',
-     'date_last_voted'
+     'vote_tally'
     ]
   })
     .then(dbTopicsData => res.json(dbTopicsData))
@@ -19,5 +20,71 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/:id', (req, res) => {
+  Topics.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'topic',
+      'vote_tally'
+    ]
+  })
+  .then(dbTopicsData => res.json(dbTopicsData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+router.post('/', (req, res) => {
+  Topics.create({
+    id: req.body.id,
+    topic: req.body.topic,
+    vote_tally: req.body.vote_tally
+  })
+  .then(dbTopicsData => res.json(dbTopicsData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+router.put('/:id', (req, res) => {
+  // custom static method created in models/Post.js
+  Topics.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbTopicsData => res.json(dbTopicsData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });  
+});
+
+router.delete('/:id', (req, res) => {
+  Topics.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbTopicsData => {
+    if (!dbTopicsData) {
+      res.status(404).json({ message: 'No topic found!'});
+      return;
+    }
+    res.json(dbTopicsData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+
 
 module.exports = router;
