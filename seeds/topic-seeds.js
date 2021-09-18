@@ -13,12 +13,13 @@ const topicData = [
   },
   {
     topic: 'Top 5 coding languages',
-    vote_tally: 22
+    vote_tally: 25,
+    user_id: 3
   },
-  
   {
     topic: 'Top 5 software engineers',
-    vote_tally: 26
+    vote_tally: 3444,
+    user_id: 2
   }
 ];
 
