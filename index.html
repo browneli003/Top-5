@@ -16,39 +16,31 @@
     <!-- navigation -->
     <header>
       <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Top 5</a>
+        <a class="navbar-brand"><h1>Top 5</h1></a>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Email">
           <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Password">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
         </form>
       </nav>
-        <h1>
-          Top 5
-        </h1>
-        <nav>
-          <form class="login-form">
-             <li><div>
-                <label for="email-login">email:</label>
-                <input type="text" id="email-login" />
-              </div>
-              <div>
-                <label for="password-login">password:</label>
-                <input type="password" id="password-login" />
-              </div>
-              <div>
-                <button type="submit"></button>
-              </div></li> 
-            </form>
-      </nav></ul>
   </header>
-      
-        <ul><li><h1>Top 5</h1></li>
-
     <main>
+      <label for="exampleDataList" class="form-label">Add topic below</label>
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+      <datalist id="datalistOptions">
+        <option value="Coffee Shops">
+        <option value="Workout Routines">
+        <option value="Movies">
+        <option value="Vacation Spots">
+        <option value="Beaches">
+          <!-- Figure out how they can add more?-->
+      </datalist>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+      
+      <!--Cards-->
       <div class="row">
         <div class="col-sm-4">
-          <div class="card">
+          <div class="card w-50">
             <div class="card-body">
               <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">
@@ -59,7 +51,7 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card">
+          <div class="card w-50">
             <div class="card-body">
               <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">
@@ -70,7 +62,7 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card">
+          <div class="card w-50">
             <div class="card-body">
               <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">
