@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     attributes: [
      'topic',
      'vote_tally',
-     'date_last_voted'
+     
     ]
   })
     .then(dbTopicsData => res.json(dbTopicsData))
