@@ -2,16 +2,19 @@ const { Topics } = require('../models');
 
 const topicData = [
   {
-    topic: 'Top 5 coding languages',
-    vote_tally: 22
+    topic: 'Some languages',
+    vote_tally: 10,
+    user_id: 1
   },
   {
-    topic: 'Top 5 ',
-    vote_tally: 22
+    topic: 'Top 5 Burritos',
+    vote_tally: 22,
+    user_id: 2
   },
   {
     topic: 'Top 5 coding languages',
-    vote_tally: 22
+    vote_tally: 2,
+    user_id: 3
   }
 ];
 
