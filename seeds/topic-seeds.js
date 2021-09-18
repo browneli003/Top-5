@@ -4,6 +4,14 @@ const topicData = [
   {
     topic: 'Top 5 coding languages',
     vote_tally: 22
+  },
+  {
+    topic: 'Top 5 ',
+    vote_tally: 22
+  },
+  {
+    topic: 'Top 5 coding languages',
+    vote_tally: 22
   }
 ];
 

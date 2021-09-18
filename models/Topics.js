@@ -55,9 +55,12 @@ Topics.init(
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    date_last_voted: {
-        type: DataTypes.DATE,
-        allowNull: false
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
     }
   },
   {
