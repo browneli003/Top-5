@@ -11,12 +11,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
        
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-<script>
-  // compile the template
-  var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-  // execute the compiled template and print the output to the console
-  console.log(template({ doesWhat: "rocks!" }));
-</script>
+      <script src="Public\js\java.js"></script>
+
 </head>
 
 <body>
@@ -98,15 +94,6 @@
           </div>
         </div>
     </main>
-
-    <!--Script for handlebars -->
-    <script type = "text/javascript">
-    var myInfo = "<p>{{name}} and {{votes}}</p>";
-    var template = Handlebars.compile(myInfo);
-    var data = template({name:"Coffee Shop", votes:"1. Hey 2. Testing 3. what 4. hey 5. hey"})
-    document.getElementById("topData").innerHTML += data;
-</script>
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
