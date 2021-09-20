@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Topics } = require('../../models');
+const { Topics, Votes, User } = require('../../models');
 const { update } = require('../../models/Topics');
 
 // The `/api/topics` endpoint
@@ -12,7 +12,14 @@ router.get('/', (req, res) => {
       'id',
      'topic',
      'vote_tally'
-    ]
+    ],
+    include: {
+      model: Votes,
+      attributes: ['id', 'topic_id','rank', 'item_name'],
+      
+      model: User,
+      attributes: ['id']
+    }
   })
     .then(dbTopicsData => res.json(dbTopicsData))
     .catch(err => {
@@ -30,7 +37,12 @@ router.get('/:id', (req, res) => {
       'id',
       'topic',
       'vote_tally'
-    ]
+    ],
+    include: {
+      model: User,
+      attributes: ['id']
+
+    }
   })
   .then(dbTopicsData => res.json(dbTopicsData))
   .catch(err => {
