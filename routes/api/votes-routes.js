@@ -50,7 +50,53 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    Votes.create({
+        id: req.body.id,
+        topic_id: req.body.topic_id,
+        user_id: req.body.user_id,
+        rank: req.body.rank,
+        item_name: req.body.item_name
+    })
+    .then(dbVotesData => res.json(dbVotesData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
+router.put('/:id', (req, res) => {
+    // custom static method created in models/Post.js
+    Votes.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbTopicsData => res.json(dbTopicsData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });  
+  });
+
+router.delete('/:id', (req, res) => {
+    Votes.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbVotesData => {
+        if(!dbVotesData) {
+            res.status(404).json({ message: 'Please vote first'});
+            return
+        }
+        res.json(dbVotesData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 
 
