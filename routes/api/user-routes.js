@@ -4,7 +4,13 @@ const { User, Topics, Votes} = require('../../models');
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { exclude: ['password'] },
+    include: {
+      model: Topics,
+      attributes: ['id', 'topic', 'vote_tally', 'user_id'],
+      model: Votes,
+      attributes: ['id', 'topic_id', 'user_id', 'rank', 'item_name']
+    }
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -18,19 +24,7 @@ router.get('/:id', (req, res) => {
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
-    },
-    include: [
-      {
-          model:Votes,
-            attributes: [
-                'id', 'topic_id','user_id', 'rank', 'item_name'
-            ],
-        include: {
-            model: Topics,
-                attributes: ['id', 'topic', 'vote_tally', 'user_id']
-            }
-      }
-    ]
+    }
   })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -53,13 +47,12 @@ router.post('/', (req, res) => {
     password: req.body.password
   })
   .then(dbUserData => {
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-  
-      res.json(dbUserData);
-    });
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+     res.json(dbUserData);
+    
   })
 });
 
@@ -81,27 +74,13 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-
-    req.session.save(() => {
-      // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
-    });
+    res.json({ user: dbUserData, message: 'You are now logged in!' });
+;
   });
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  }
-  else {
     res.status(404).end();
-  }
 });
 
 router.put('/:id', (req, res) => {
