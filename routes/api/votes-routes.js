@@ -12,16 +12,6 @@ Votes.findAll({
         'rank',
         'item_name'
     ],
-    include: [
-        {
-            model: Topics,
-            attributes: ['id', 'topic', 'vote_tally', 'user_id']
-        },
-        {
-        model: User,
-        include: ['id',]
-        }
-    ]
 })
     .then(dbVotesData => res.json(dbVotesData))
     .catch(err => {
@@ -44,12 +34,12 @@ router.get('/:id', (req, res) => {
         ],
         include: [
             {
-                model: Topics,
-                attributes: ['id', 'topic', 'vote_tally', 'user_id']
+                model: User,
+                attributes: ['id']
             },
             {
-            model: User,
-            include: ['id',]
+                model: Topics,
+                attributes: ['id', 'topic', 'vote_tally', 'user_id', 'rank', 'item_name']
             }
         ]
     })
@@ -59,6 +49,9 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+
+
 
 
 module.exports = router;
