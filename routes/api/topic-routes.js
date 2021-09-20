@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Topics, Votes, User } = require('../../models');
-// const { update } = require('../../models/Topics');
 
 // The `/api/topics` endpoint
 
