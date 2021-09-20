@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Topics, Votes, User } = require('../../models');
-const { update } = require('../../models/Topics');
+// const { update } = require('../../models/Topics');
 
 // The `/api/topics` endpoint
 
@@ -53,9 +53,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Topics.create({
-    id: req.body.id,
     topic: req.body.topic,
-    vote_tally: req.body.vote_tally
+    vote_tally: req.body.vote_tally,
+    user_id: req.body.user_id
   })
   .then(dbTopicsData => res.json(dbTopicsData))
   .catch(err => {
