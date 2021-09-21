@@ -9,12 +9,12 @@ const userData = [
   {
     username: "nooneusethis",
     email: "nooneusesthis@hotmail.com",
-    password: "yay"
+    password: "yayk"
   },
   {
     username: "things",
     email: "things@aregood.com",
-    password: "555"
+    password: "555lop"
   }
 ];
 
