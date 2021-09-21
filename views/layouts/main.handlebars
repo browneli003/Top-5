@@ -7,22 +7,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+      <script src="Public\js\java.js"></script>
+
 </head>
 
 <body>
     <!-- navigation -->
     <header>
-        <h1>Top 5</h1>
-        <nav>
-            <form type="submit"></form>
-        </nav>
-    </header>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand"><h1>Top 5</h1></a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Email">
+          <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Password">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </form>
+      </nav>
+  </header>
     <main>
-    {{{body}}}
+      <label for="exampleDataList" class="form-label">Add topic below</label>
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+      <datalist id="datalistOptions">
+        <option value="Coffee Shops">
+        <option value="Workout Routines">
+        <option value="Movies">
+        <option value="Vacation Spots">
+        <option value="Beaches">
+          <!-- Figure out how they can add more?-->
+      </datalist>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+     <div>
+     {{{body}}}
+     </div> 
     </main>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -33,6 +54,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <!--CSS-->
+        <link rel="styles" href="Public/css/stylesheet.css">
 </body>
 
 </html>
