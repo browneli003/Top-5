@@ -33,15 +33,15 @@ router.get('/:id', (req, res) => {
             'item_name'
         ],
         include: [
-            {
+        {
                 model: User,
                 attributes: ['id']
-            },
-            {
+        },
+        {
                 model: Topics,
-                attributes: ['id', 'topic', 'vote_tally', 'user_id', 'rank', 'item_name']
-            }
-        ]
+                attributes: ['id', 'topic', 'vote_tally', 'user_id']
+        }    
+        ]  
     })
     .then(dbVotesData => res.json(dbVotesData))
     .catch(err => {
@@ -65,6 +65,7 @@ router.post('/', (req, res) => {
     });
 });
 
+
 router.put('/:id', (req, res) => {
     // custom static method created in models/Post.js
     Votes.update(req.body, {
@@ -79,6 +80,7 @@ router.put('/:id', (req, res) => {
       });  
   });
 
+
 router.delete('/:id', (req, res) => {
     Votes.destroy({
         where: {
@@ -86,11 +88,19 @@ router.delete('/:id', (req, res) => {
         }
     })
     .then(dbVotesData => {
+
+    if (!dbVotesData) {
+        res.status(404).json({message: 'Vote not recorded!'});
+        return;
+    }
+    res.json(dbVotesData);
+
         if(!dbVotesData) {
             res.status(404).json({ message: 'Please vote first'});
             return
         }
         res.json(dbVotesData);
+
     })
     .catch(err => {
         console.log(err);
