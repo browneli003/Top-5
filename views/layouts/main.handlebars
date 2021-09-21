@@ -18,15 +18,17 @@
 <body>
     <!-- navigation -->
     <header>
-      <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand"><h1>Top 5</h1></a>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Email">
-          <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Password">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-        </form>
-      </nav>
-  </header>
+            <h1>
+                <a href="/">TOP 5</a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
+                <a href="/login">login</a>
+                {{/if}}
+            </nav>
+        </header>
     <main>
       <label for="exampleDataList" class="form-label">Add topic below</label>
       <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
