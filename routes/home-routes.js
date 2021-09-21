@@ -10,8 +10,7 @@ router.get('/', (req, res) => {
       'topic',
       'vote_tally',
       'user_id',
-   //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    ],
+      [sequelize.literal('(SELECT COUNT(*) FROM Topics WHERE topic = topic'), 'vote_tally']    ],
     include: [
       {
         model: Votes,
@@ -60,8 +59,7 @@ router.get('/login', (req, res) => {
         'topic',
         'vote_tally',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-      ],
+        [sequelize.literal('(SELECT COUNT(*) FROM Topics WHERE topic = topic'), 'vote_tally']      ],
       include: [
         {
           model: Votes,

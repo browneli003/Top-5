@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Topics, Votes, User } = require('../../models');
 
 // The `/api/topics` endpoint
@@ -10,7 +11,8 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
      'topic',
-     'vote_tally'
+     'vote_tally',
+    [sequelize.literal('(SELECT COUNT(*) FROM Topics WHERE topic = topic'), 'vote_tally']
     ],
     include: {
       model: Votes,
