@@ -65,6 +65,22 @@ router.post('/', (req, res) => {
     });
 });
 
+
+router.put('/:id', (req, res) => {
+    // custom static method created in models/Post.js
+    Votes.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbTopicsData => res.json(dbTopicsData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });  
+  });
+
+
 router.delete('/:id', (req, res) => {
     Votes.destroy({
         where: {
@@ -72,17 +88,26 @@ router.delete('/:id', (req, res) => {
         }
     })
     .then(dbVotesData => {
+
     if (!dbVotesData) {
         res.status(404).json({message: 'Vote not recorded!'});
         return;
     }
     res.json(dbVotesData);
+
+        if(!dbVotesData) {
+            res.status(404).json({ message: 'Please vote first'});
+            return
+        }
+        res.json(dbVotesData);
+
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
+
 
 
 module.exports = router;
