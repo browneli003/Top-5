@@ -19,8 +19,11 @@ router.get('/', (req, res) => {
       model: User,
       attributes: ['id']
     }
-  })
-    .then(dbTopicsData => res.json(dbTopicsData))
+  }).then(dbTopicsData => 
+      {
+        res.json(dbTopicsData);
+        console.log(dbTopicsData);
+      })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
