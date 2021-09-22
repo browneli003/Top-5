@@ -13,6 +13,56 @@
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
       <script src="../../Public/js/java.js"></script>
 
+      <style>
+  h1 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 100;
+	text-transform: uppercase;
+	color: #00caa6;
+	font-style: italic;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 58px;
+	line-height: 54px;
+	text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+  }
+    body {
+        background-color: lightgrey;
+    }
+
+      h5 {
+          color: #00caa6;
+        	text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+
+    li {
+        color: orchid;
+    }
+
+    .sketchy {
+    padding: 4rem 8rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    font-size: 2.5rem;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+    
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
+}
+
 </head>
 
 <body>
