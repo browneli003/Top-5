@@ -10,16 +10,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
        
+      <link rel="stylesheet" href="/public/css/stylesheet.css"
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
       <script src="Public\js\java.js"></script>
+<style>
+  h1 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 100;
+	text-transform: uppercase;
+	color: #00caa6;
+	font-style: italic;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 58px;
+	line-height: 54px;
+	text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+  }
+    body {
+        background-color: lightgrey;
+        color: #00caa6;
+    }
 
+    h5 {
+        	text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+
+    .card-body {
+        background: darkgray;
+    }
+</style>
 </head>
 
 <body>
     <!-- navigation -->
     <header>
-            <h1>
-                <a href="/">TOP 5</a>
+            <h1 class="title" id="title">
+               TOP 5
             </h1>
             <nav>
                 {{#if loggedIn}}
@@ -56,8 +81,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <!--CSS-->
-        <link rel="styles" href="Public/css/stylesheet.css">
+    
 </body>
 
 </html>

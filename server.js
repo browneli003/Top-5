@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+app.use("/", express.static(__dirname+"public\css\stylesheet.css"))
+
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
