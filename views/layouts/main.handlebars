@@ -21,11 +21,11 @@
             <a href="/">TOP 5</a>
         </h1>
         <nav>
-            {{#if loggedIn}}
+            {{!-- {{#if loggedIn}} --}}
             <button id="logout" class="btn-no-style">logout</button>
-            {{else}}
+            {{!-- {{else}} --}}
             <a href="/login">login</a>
-            {{/if}}
+            {{!-- {{/if}} --}}
         </nav>
     </header>
     <main>
@@ -58,9 +58,9 @@
     <!--CSS-->
     <link rel="styles" href="public/css/stylesheet.css">
     
-    {{#if loggedIn}}
+    {{!-- {{#if loggedIn}} --}}
     <script src="/javascript/logout.js"></script>
-    {{/if}}
+    {{!-- {{/if}} --}}
 </body>
 
 </html>
