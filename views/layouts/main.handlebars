@@ -23,21 +23,21 @@
                 <a href="/" >TOP 5</a>                
             </div>
         </h1>
-        <nav>
-            <div class="row" >
-                <div class="col-sm-2"></div>
-                <div class="col-sm-3">
-                    <button id="createNewTopic">Create New Topic</button>  
+        <nav class="container justify-content-center">
+            <div class="row justify-content-around" >
+                {{!-- <div class="col-sm-2"></div> --}}
+                <div class="col-4">
+                    <button class="btn btn-outline-dark" id="createNewTopic">Create New Topic</button>  
                 </div>
-                <div class="col-sm-2"></div>
-                <div class="col-sm-3">
+                {{!-- <div class="col-sm-2"></div> --}}
+                <div class="col-4">
                     {{#if loggedIn}}
                     <button id="logout" class="btn-no-style">logout</button>
                     {{else}}
-                    <a href="/login">login</a>
+                    <a href="/login" class="btn btn-outline-dark" role="button">Login</a>
                     {{/if}}
                 </div>
-                <div class="col-sm-2"></div>
+                {{!-- <div class="col-sm-2"></div> --}}
             </div>
         </nav>
     </header>
