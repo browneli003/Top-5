@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       'topic',
       'vote_tally',
       'user_id',
-      [sequelize.literal('(SELECT COUNT(*) FROM Topics WHERE topic = topic'), 'vote_tally']    ],
+      [sequelize.literal('(SELECT COUNT(*) FROM topics WHERE topics.id = topic'), 'vote_tally']    ],
     include: [
       {
         model: Votes,
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+/* 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
@@ -59,7 +59,7 @@ router.get('/login', (req, res) => {
         'topic',
         'vote_tally',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM Topics WHERE topic = topic'), 'vote_tally']      ],
+        [sequelize.literal('(SELECT COUNT(*) FROM topics WHERE topics.id = topic'), 'vote_tally']      ],
       include: [
         {
           model: Votes,
@@ -95,5 +95,5 @@ router.get('/login', (req, res) => {
         res.status(500).json(err);
       });
   });
-
+ */
 module.exports = router;
