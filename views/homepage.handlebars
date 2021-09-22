@@ -1,3 +1,4 @@
+
 <link rel="style" href="layouts/public/css/stylesheet.css"
 <div> <div class="col-sm-4">
           <div class="card w-50">
@@ -17,3 +18,13 @@
             </div>
           </div>
         </div></div>
+
+<div>You are on the homepage</div>
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{>topic-info post}}
+  </li>
+  {{/each}}
+</ol>
+ 
