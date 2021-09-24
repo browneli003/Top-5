@@ -17,8 +17,8 @@ class Topics extends Model {
                   'vote_tally',
                   'user_id',
                   [
-                      sequelize.literal('(SELECT COUNT(*) FROM topics WHERE id = vote.post_id)'),
-                      'vote_count'
+                      sequelize.literal('(SELECT COUNT(*) FROM topics WHERE topics.id = vote.topics_id)'),
+                      'vote_tally'
                   ]
               ]
           });

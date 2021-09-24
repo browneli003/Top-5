@@ -5,9 +5,20 @@ async function like(event) {
         document.querySelector('.likeBtn').classList.add('btn-success');
         document.querySelector('.likeBtn').classList.remove('btn-primary');
         likeStatus = true;
-        const response = await fetch('/api/topics/1', {
-            method: 'put'
-        })
+        const response = await fetch('/api/topics/upvote', {
+            method: 'put',
+            body: JSON.stringify({
+                post_id: 1
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert(response.statusText);
+        }
         return;
     }
     if (likeStatus) {
