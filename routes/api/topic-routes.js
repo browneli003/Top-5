@@ -83,9 +83,10 @@ router.put('/:id', (req, res) => {
 router.put('/upvote', (req, res) => {
   // custom static method created in models/Post.js
   // make sure the session exists first
+  console.log("made it to api call");
   if (req.session) {
       // pass session id along with all destructured properties on req.body
-      Topics.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+      Topics.upvote({ ...req.body, user_id: req.session.user_id }, { Topics, Votes, User })
           .then(updatedVoteData => res.json(updatedVoteData))
           .catch(err => {
               console.log(err);

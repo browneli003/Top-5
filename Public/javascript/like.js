@@ -1,21 +1,25 @@
 var likeStatus = '';
 async function like(event) {
+    event.preventDefault();
     if (!likeStatus) {
         console.log('like btn');
         document.querySelector('.likeBtn').classList.add('btn-success');
         document.querySelector('.likeBtn').classList.remove('btn-primary');
         likeStatus = true;
+        // const id = window.location.toString().split('/')[
+        //     window.location.toString().split('/').length - 1
+        //   ];
         const response = await fetch('/api/topics/upvote', {
             method: 'put',
             body: JSON.stringify({
-                post_id: 1
+                topic_id: 1
             }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
         if (response.ok) {
-            document.location.reload();
+            // document.location.reload();
         } else {
             alert(response.statusText);
         }

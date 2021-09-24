@@ -3,13 +3,13 @@ const sequelize = require('../config/connection');
 
 class Topics extends Model {
   static upvote(body, models) {
-      return models.Vote.create({
-          user_id: body.user_id,
-          topic_id: body.topic_id
+      return models.Votes.create({
+          user_id: 1,
+          topic_id: 3
       }).then(() => {
           return Topics.findOne({
               where: {
-                  id: body.topic_id
+                  id: 3
               },
               attributes: [
                   'id',
