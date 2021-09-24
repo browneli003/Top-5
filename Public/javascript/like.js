@@ -1,10 +1,13 @@
 var likeStatus = '';
-function like(event) {
+async function like(event) {
     if (!likeStatus) {
         console.log('like btn');
         document.querySelector('.likeBtn').classList.add('btn-success');
         document.querySelector('.likeBtn').classList.remove('btn-primary');
         likeStatus = true;
+        const response = await fetch('/api/topics/1', {
+            method: 'put'
+        })
         return;
     }
     if (likeStatus) {
