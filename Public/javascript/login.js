@@ -46,7 +46,8 @@ async function loginForm(event) {
       alert(response.statusText);
     }
   }
-}
+};
 
+document.getElementById("navBar").style.display = "none"
 document.querySelector('.login-form').addEventListener('submit', loginForm);
 document.querySelector('.signup-form').addEventListener('submit', signupForm);

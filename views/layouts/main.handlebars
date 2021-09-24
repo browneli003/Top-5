@@ -11,35 +11,36 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="/css/stylesheet.css"/>
 </head>
 
 <body>
     <!-- navigation -->
     <header>
         <h1>
-            <a href="/">TOP 5</a>
+            <div class="d-flex justify-content-center">
+                <a href="/" id="top5">TOP 5</a>                
+            </div>
         </h1>
-        <nav>
-            {{#if loggedIn}}
-            <button id="logout" class="btn-no-style">logout</button>
-            {{else}}
-            <a href="/login">login</a>
-            {{/if}}
+        <nav id="navBar" class="container justify-content-center">
+            <div class="row justify-content-around" >
+                <div class="col-4">
+                    {{#if loggedIn}}
+                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>  
+                    {{/if}}
+                </div>
+                <div class="col-4">
+                    {{#if loggedIn}}
+                    <button id="logout" class="btn btn-light">logout</button>
+                    {{else}}
+                    <a href="/login" class="btn btn-light" role="button">Login</a>
+                    {{/if}}
+                </div>
+            </div>
         </nav>
     </header>
-    <main>
-        <label for="exampleDataList" class="form-label">Add topic below</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-        <datalist id="datalistOptions">
-            <option value="Coffee Shops">
-            <option value="Workout Routines">
-            <option value="Movies">
-            <option value="Vacation Spots">
-            <option value="Beaches">
-                <!-- Figure out how they can add more?-->
-        </datalist>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+    <main> 
         <div>
             {{{body}}}
         </div>
@@ -60,6 +61,7 @@
     
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/like.js"></script>
     {{/if}}
 </body>
 

@@ -19,8 +19,11 @@ router.get('/', (req, res) => {
       model: User,
       attributes: ['id']
     }
-  })
-    .then(dbTopicsData => res.json(dbTopicsData))
+  }).then(dbTopicsData => 
+      {
+        res.json(dbTopicsData);
+        console.log(dbTopicsData);
+      })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -75,6 +78,20 @@ router.put('/:id', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });  
+});
+
+router.put('/upvote', (req, res) => {
+  // custom static method created in models/Post.js
+  // make sure the session exists first
+  if (req.session) {
+      // pass session id along with all destructured properties on req.body
+      Topics.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+          .then(updatedVoteData => res.json(updatedVoteData))
+          .catch(err => {
+              console.log(err);
+              res.status(500).json(err);
+          });
+  }
 });
 
 router.delete('/:id', (req, res) => {
