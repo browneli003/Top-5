@@ -20,23 +20,28 @@
     <header>
         <h1>
             <div class="d-flex justify-content-center">
-                <a href="/" id="top5">TOP 5</a>                
+                <a href="/" id="top5" class="top5">TOP 5</a>                
             </div>
         </h1>
-        <nav id="navBar" class="container justify-content-center">
-            <div class="row justify-content-around" >
-                <div class="col-4">
+        <nav id="navBar">
+    <ul class="nav navbar-nav navbar-right">
+      <li>>
                     {{#if loggedIn}}
-                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>  
+                    <button class="btn btn-info" id="createNewTopic" style="float: right;">Create New Topic</button>  
                     {{/if}}
-                </div>
-                <div class="col-4">
+                </div></li>
+      <li>
                     {{#if loggedIn}}
                     <button id="logout" class="btn btn-outline-danger">logout</button>
                     {{else}}
-                    <a href="/login" class="btn btn-outline-success" role="button">Login</a>
+                    <a href="/login" class="btn btn-outline-success" role="button" style="float: right;">Login</a>
                     {{/if}}
-                </div>
+                </div></li>
+    </ul>
+  </div>
+</nav>
+               
+               
             </div>
         </nav>
     </header>
