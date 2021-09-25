@@ -13,21 +13,16 @@ h1 {
 }
 
 body {
-    background: #44A08D;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #093637, #44A08D);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #093637, #44A08D);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: ivory;
 }
 
 .text {
-    color: white;
+    color: gray;
 }
 
 h5 {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-    color: white;
+    color:gray;
 }
 
 #top5 {
@@ -40,7 +35,7 @@ h5 {
 }
 
 li {
-    color: orchid;
+    color: rgb(53, 51, 53);
 }
 
 .card {
@@ -60,4 +55,5 @@ li {
 
 .container {
     padding: 2px 16px;
+    margin: 20px;
 }
