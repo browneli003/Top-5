@@ -19,7 +19,7 @@
     <!-- navigation -->
     <header>
         <h1>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center title">
                 <a href="/" >TOP 5</a>                
             </div>
         </h1>
@@ -32,9 +32,9 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-3">
                     {{#if loggedIn}}
-                    <button id="logout" class="btn-no-style">logout</button>
+                    <button id="logout" class="btn btn-outline-danger">logout</button>
                     {{else}}
-                    <a href="/login">login</a>
+                    <a class="btn btn-outline-success" href="/login">login</a>
                     {{/if}}
                 </div>
                 <div class="col-sm-2"></div>
