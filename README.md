@@ -16,7 +16,7 @@
 
 
 
-Heroku Link:
+Heroku Link: https://goat-meat.herokuapp.com/
 
 Screenshot:![Image 9-26-21 at 7 11 PM](https://user-images.githubusercontent.com/84150748/134831764-d88f8039-5700-4e54-8c96-b70b7031acc6.jpeg)
 
