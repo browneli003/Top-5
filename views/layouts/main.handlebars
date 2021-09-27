@@ -27,14 +27,14 @@
             <div class="row justify-content-around" >
                 <div class="col-4">
                     {{#if loggedIn}}
-                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>  
+                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>  
                     {{/if}}
                 </div>
                 <div class="col-4">
                     {{#if loggedIn}}
-                    <button id="logout" class="btn btn-danger">logout</button>
+                    <button id="logout" class="btn btn-light">logout</button>
                     {{else}}
-                    <a href="/login" class="btn btn-success" role="button">Login</a>
+                    <a href="/login" class="btn btn-light" role="button">Login</a>
                     {{/if}}
                 </div>
             </div>
@@ -61,7 +61,7 @@
     
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/like.js"></script>
     {{/if}}
 </body>
 
-</html>
