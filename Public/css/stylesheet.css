@@ -21,8 +21,9 @@ body {
 
 h5 {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-    color:gray;
-    border-bottom: gray solid;
+    color: white;
+    border-bottom: gray solid 1px;
+
 }
 
 #top5 {
@@ -32,6 +33,7 @@ h5 {
 .card-body {
     border: 2px solid gray;
     border-radius: 5px;
+    margin:10px;
 }
 
 li {
@@ -65,17 +67,11 @@ h5 {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
+    padding: 2px 16px;
+   
+}
 
-  .top5 {
-      color: gray;
-      font-size: 70px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+.btn2 {
+    float:right;
+}
 
-  .top5:hover {
-      color:black;
-  }

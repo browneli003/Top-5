@@ -27,14 +27,18 @@
     <ul class="nav navbar-nav navbar-right">
       <li>>
                     {{#if loggedIn}}
-                    <button class="btn btn-info" id="createNewTopic" style="float: right;">Create New Topic</button>  
+
+                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>  
+
                     {{/if}}
                 </div></li>
       <li>
                     {{#if loggedIn}}
-                    <button id="logout" class="btn btn-outline-danger">logout</button>
+
+                    <button id="logout" class="btn btn-danger">logout</button>
                     {{else}}
-                    <a href="/login" class="btn btn-outline-success" role="button" style="float: right;">Login</a>
+                    <a href="/login" class="btn btn-success" role="button">Login</a>
+
                     {{/if}}
                 </div></li>
     </ul>
