@@ -2,47 +2,42 @@ h1 {
     margin: 1em 0 0.5em 0;
     font-weight: 100;
     text-transform: uppercase;
-    color: #00caa6;
+    color: #7a8381;
     font-style: italic;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 58px;
     line-height: 54px;
-    text-shadow: 2px 5px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 5px 0 rgba(10, 212, 248, 0.774);
     border-bottom: 4mm ridge rgba(109, 109, 109, 0.74);
     padding-bottom: 10px;
+    text-decoration: none;
+    text-decoration-color: silver;
 }
 
 body {
-    background: #44A08D;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #093637, #44A08D);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #093637, #44A08D);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: whitesmoke;
 }
 
-.text {
-    color: white;
-}
 
 h5 {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
     color: white;
+    border-bottom: gray solid 1px;
+
 }
 
 #top5 {
-    color: #FFFFFF;
-    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
-    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .card-body {
     border: 2px solid gray;
     border-radius: 5px;
+    margin:10px;
 }
 
 li {
-    color: orchid;
+    color: white;
 }
 
 .card {
@@ -60,6 +55,23 @@ li {
 
 /* Add some padding inside the card container */
 
+h5 {
+    
+    color:ghostwhite;
+
+}
+
+.btn {
+    float: right;
+
+}
+
 .container {
     padding: 2px 16px;
+   
 }
+
+.btn2 {
+    float:right;
+}
+
