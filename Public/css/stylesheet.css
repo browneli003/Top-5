@@ -28,6 +28,7 @@ body {
 h5 {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
     color: white;
+    border-bottom: gray solid 1px;
 }
 
 #top5 {
@@ -39,6 +40,7 @@ h5 {
 .card-body {
     border: 2px solid gray;
     border-radius: 5px;
+    margin:10px;
 }
 
 li {
@@ -62,4 +64,9 @@ li {
 
 .container {
     padding: 2px 16px;
+   
+}
+
+.btn2 {
+    float:right;
 }
