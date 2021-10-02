@@ -3,25 +3,22 @@ const sequelize = require('../config/connection');
 
 class Topics extends Model {
   static upvote(body, models) {
-      return models.Votes.create({
-          user_id: 1,
+    console.log('upvote');
+      return models.Topics.create({
+          user_id: body.user_id,
           topic_id: 3
       }).then(() => {
-          return Topics.findOne({
-              where: {
-                  id: 3
-              },
-              attributes: [
-                  'id',
-                  'topic',
-                  'vote_tally',
-                  'user_id',
-                  [
-                      sequelize.literal('(SELECT COUNT(*) FROM topics WHERE topics.id = vote.topics_id)'),
-                      'vote_tally'
-                  ]
-              ]
-          });
+          // return Topics.findOne({
+          //     where: {
+          //         id: 3
+          //     },
+          //     attributes: [
+          //         'id',
+          //         'topic',
+          //         'vote_tally',
+          //         'user_id'
+          //     ]
+          // });
       });
   }
 };
