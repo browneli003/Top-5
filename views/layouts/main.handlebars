@@ -12,7 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="../../Public/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
 </head>
 
 <body>
@@ -20,100 +20,34 @@
     <header>
         <h1>
             <div class="d-flex justify-content-center">
-                <a href="/" id="top5"  class="top5">TOP 5</a>                
+                <a href="/" id="top5" class="top5">TOP 5</a>
             </div>
         </h1>
         <nav id="navBar">
-    <ul class="nav navbar-nav navbar-right">
-      <li>>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
                     {{#if loggedIn}}
-                    <button class="btn btn-info" id="createNewTopic" style="float: right;">Create New Topic</button>  
+
+                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>
+
                     {{/if}}
-                </div></li>
-      <li>
+                    </div>
+                </li>
+                <li>
                     {{#if loggedIn}}
-                    <button id="logout" class="btn btn-outline-danger">logout</button>
+
+                    <button id="logout" class="btn btn-danger">logout</button>
                     {{else}}
-                    <a href="/login" class="btn btn-outline-success" role="button" style="float: right;">Login</a>
+                    <a href="/login" class="btn btn-success" role="button">Login</a>
+
                     {{/if}}
-                </div></li>
-    </ul>
-  </div>
-</nav>
-               
-               
+                    </div>
+                </li>
+            </ul>
             </div>
         </nav>
     </header>
-    <main> 
-        <div>
-            {{{body}}}
-        </div>
-    </main>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <!--CSS-->
-    <link rel="styles" href="../../Public/css/stylesheet.css">
-    
-    {{#if loggedIn}}
-    <script src="../../Public/javascript/logout.js"></script>
-    <script src="../../Public/javascript/like.js"></script>
-    {{/if}}
-</body>
-
-=======
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Top 5</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="../../Public/css/stylesheet.css"/>
-</head>
-
-<body>
-    <!-- navigation -->
-    <header>
-        <h1>
-            <div class="d-flex justify-content-center">
-                <a href="/" id="top5">TOP 5</a>                
-            </div>
-        </h1>
-        <nav id="navBar" class="container justify-content-center">
-            <div class="row justify-content-around" >
-                <div class="col-4">
-                    {{#if loggedIn}}
-                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>  
-                    {{/if}}
-                </div>
-                <div class="col-4">
-                    {{#if loggedIn}}
-                    <button id="logout" class="btn btn-light">logout</button>
-                    {{else}}
-                    <a href="/login" class="btn btn-light" role="button">Login</a>
-                    {{/if}}
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main> 
+    <main>
         <div>
             {{{body}}}
         </div>
@@ -131,7 +65,77 @@
         crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="styles" href="public/css/stylesheet.css">
-    
+    {{#if loggedIn}}
+    <script src="../../Public/javascript/logout.js"></script>
+    <script src="../../Public/javascript/like.js"></script>
+    {{/if}}
+</body>
+
+
+{{!-- duplicated code somehow... keeping incase there's something we need in here. --}}
+{{!-- 
+=======
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Top 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
+</head>
+
+<body>
+    <!-- navigation -->
+    <header>
+        <h1>
+            <div class="d-flex justify-content-center">
+                <a href="/" id="top5">TOP 5</a>
+            </div>
+        </h1>
+        <nav id="navBar" class="container justify-content-center">
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    {{#if loggedIn}}
+                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>
+                    {{/if}}
+                </div>
+                <div class="col-4">
+                    {{#if loggedIn}}
+                    <button id="logout" class="btn btn-light">logout</button>
+                    {{else}}
+                    <a href="/login" class="btn btn-light" role="button">Login</a>
+                    {{/if}}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            {{{body}}}
+        </div>
+    </main>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="styles" href="public/css/stylesheet.css">
+
     {{#if loggedIn}}
     <script src="../../Public/javascript/logout.js"></script>
     <script src="../../Public/javascript/like.js"></script>
@@ -153,7 +157,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="../../Public/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
 </head>
 
 <body>
@@ -161,19 +165,20 @@
     <header>
         <h1>
             <div class="d-flex justify-content-center">
-                <a href="/" id="top5"  class="top5">TOP 5</a>                
+                <a href="/" id="top5" class="top5">TOP 5</a>
             </div>
         </h1>
         <nav id="navBar">
-    <ul class="nav navbar-nav navbar-right">
-      <li>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
                     {{#if loggedIn}}
 
-                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>  
+                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>
 
                     {{/if}}
-                </div></li>
-      <li>
+                    </div>
+                </li>
+                <li>
                     {{#if loggedIn}}
 
                     <button id="logout" class="btn btn-danger">logout</button>
@@ -181,16 +186,17 @@
                     <a href="/login" class="btn btn-success" role="button">Login</a>
 
                     {{/if}}
-                </div></li>
-    </ul>
-  </div>
-</nav>
-               
-               
+                    </div>
+                </li>
+            </ul>
             </div>
         </nav>
+
+
+        </div>
+        </nav>
     </header>
-    <main> 
+    <main>
         <div>
             {{{body}}}
         </div>
@@ -207,11 +213,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!--CSS-->
-    <link rel="styles" href="../../Public/css/stylesheet.css">
-    
+    <link rel="styles" href="public/css/stylesheet.css">
     {{#if loggedIn}}
     <script src="../../Public/javascript/logout.js"></script>
     {{/if}}
 </body>
 
-</html>
+</html> --}}
