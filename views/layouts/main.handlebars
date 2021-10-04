@@ -12,7 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
 </head>
 
 <body>
@@ -20,32 +20,34 @@
     <header>
         <h1>
             <div class="d-flex justify-content-center">
-                <a href="/" id="top5"  class="top5">TOP 5</a>                
+                <a href="/" id="top5" class="top5">TOP 5</a>
             </div>
         </h1>
         <nav id="navBar">
-    <ul class="nav navbar-nav navbar-right">
-      <li>>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
                     {{#if loggedIn}}
-                    <button class="btn btn-info" id="createNewTopic" style="float: right;">Create New Topic</button>  
+
+                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>
+
                     {{/if}}
-                </div></li>
-      <li>
+                    </div>
+                </li>
+                <li>
                     {{#if loggedIn}}
-                    <button id="logout" class="btn btn-outline-danger">logout</button>
+
+                    <button id="logout" class="btn btn-danger">logout</button>
                     {{else}}
-                    <a href="/login" class="btn btn-outline-success" role="button" style="float: right;">Login</a>
+                    <a href="/login" class="btn btn-success" role="button">Login</a>
+
                     {{/if}}
-                </div></li>
-    </ul>
-  </div>
-</nav>
-               
-               
+                    </div>
+                </li>
+            </ul>
             </div>
         </nav>
     </header>
-    <main> 
+    <main>
         <div>
             {{{body}}}
         </div>
@@ -63,13 +65,16 @@
         crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="styles" href="public/css/stylesheet.css">
-    
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/like.js"></script>
     {{/if}}
 </body>
 
+
+{{!-- duplicated code somehow... keeping incase there's something we need in here. --}}
+{{!-- 
 =======
 <!doctype html>
 <html lang="en">
@@ -85,7 +90,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
 </head>
 
 <body>
@@ -93,14 +98,14 @@
     <header>
         <h1>
             <div class="d-flex justify-content-center">
-                <a href="/" id="top5">TOP 5</a>                
+                <a href="/" id="top5">TOP 5</a>
             </div>
         </h1>
         <nav id="navBar" class="container justify-content-center">
-            <div class="row justify-content-around" >
+            <div class="row justify-content-around">
                 <div class="col-4">
                     {{#if loggedIn}}
-                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>  
+                    <button class="btn btn-light" id="createNewTopic">Create New Topic</button>
                     {{/if}}
                 </div>
                 <div class="col-4">
@@ -113,7 +118,7 @@
             </div>
         </nav>
     </header>
-    <main> 
+    <main>
         <div>
             {{{body}}}
         </div>
@@ -131,7 +136,7 @@
         crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="styles" href="public/css/stylesheet.css">
-    
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/like.js"></script>
@@ -153,7 +158,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
 </head>
 
 <body>
@@ -161,19 +166,20 @@
     <header>
         <h1>
             <div class="d-flex justify-content-center">
-                <a href="/" id="top5"  class="top5">TOP 5</a>                
+                <a href="/" id="top5" class="top5">TOP 5</a>
             </div>
         </h1>
         <nav id="navBar">
-    <ul class="nav navbar-nav navbar-right">
-      <li>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
                     {{#if loggedIn}}
 
-                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>  
+                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>
 
                     {{/if}}
-                </div></li>
-      <li>
+                    </div>
+                </li>
+                <li>
                     {{#if loggedIn}}
 
                     <button id="logout" class="btn btn-danger">logout</button>
@@ -181,16 +187,17 @@
                     <a href="/login" class="btn btn-success" role="button">Login</a>
 
                     {{/if}}
-                </div></li>
-    </ul>
-  </div>
-</nav>
-               
-               
+                    </div>
+                </li>
+            </ul>
             </div>
         </nav>
+
+
+        </div>
+        </nav>
     </header>
-    <main> 
+    <main>
         <div>
             {{{body}}}
         </div>
@@ -208,10 +215,10 @@
         crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="styles" href="public/css/stylesheet.css">
-    
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
 </body>
 
-</html>
+</html> --}}
