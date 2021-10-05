@@ -7,25 +7,21 @@ router.get('/', (req, res) => {
   Topics.findAll({
     attributes: [
       'id',
-      'title',
-      'post_text',
-      'user_id',
-      'created_at'
+      'topic',
+      'item1',
+      'item2',
+      'item3',
+      'item4',
+      'item5',
+      'vote_tally'
     ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
+    include: {
+      model: Votes,
+      attributes: ['id', 'topic_id', 'rank', 'item_name'],
+
+      model: User,
+      attributes: ['id', 'username']
+    }
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
