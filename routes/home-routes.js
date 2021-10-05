@@ -13,7 +13,8 @@ router.get('/', (req, res) => {
       'item3',
       'item4',
       'item5',
-      'vote_tally'
+      'vote_tally',
+      'created_at'
     ],
     include: {
       model: Votes,
