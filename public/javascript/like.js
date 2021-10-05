@@ -1,5 +1,7 @@
 var likeStatus = '';
 async function like(event) {
+    event.preventDefault();
+
     if (!likeStatus) {
         console.log('like btn');
         document.querySelector('.likeBtn').classList.add('btn-success');
