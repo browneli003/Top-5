@@ -3,11 +3,41 @@ const sequelize = require('../config/connection');
 const { Topics, User, Votes } = require('../models');
 
 
-// render home page
 router.get('/', (req, res) => {
-  res.render('homepage', {
-    loggedIn: req.session.loggedIn
-  });
+  Topics.findAll({
+    attributes: [
+      'id',
+      'title',
+      'post_text',
+      'user_id',
+      'created_at'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+      res.render('homepage', {
+        posts,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // render login page

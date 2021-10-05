@@ -39,6 +39,26 @@ Topics.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    item1: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    item2: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    item3: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    item4: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    item5: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     vote_tally: {
         type: DataTypes.INTEGER,
         allowNull: false
