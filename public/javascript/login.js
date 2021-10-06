@@ -16,7 +16,11 @@ async function signupForm(event) {
       headers: { 'Content-Type': 'application/json' }
     });
 
+    console.log(password);
     if (response.ok) {
+      // $.getScript("nodemailer.js", function(){
+      //   sendEmailNotificaiton(email);
+      // });
       document.location.replace('/');
     } else {
       alert(response.statusText);
