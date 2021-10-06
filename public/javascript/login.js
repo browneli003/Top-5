@@ -4,6 +4,7 @@ async function signupForm(event) {
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  console.log(password);
 
   if (username && email && password) {
     const response = await fetch('/api/users', {
@@ -16,11 +17,9 @@ async function signupForm(event) {
       headers: { 'Content-Type': 'application/json' }
     });
 
-    console.log(password);
     if (response.ok) {
-      // $.getScript("nodemailer.js", function(){
-      //   sendEmailNotificaiton(email);
-      // });
+      console.log(password);
+      nodemailerJS.sendEmailNotificaiton(email);
       document.location.replace('/');
     } else {
       alert(response.statusText);

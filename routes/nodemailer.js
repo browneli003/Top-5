@@ -1,4 +1,7 @@
-const nodemailer = require("nodemailer");
+const router = require('express').Router();
+const nodemailer = require('nodemailer');
+
+router.post('/:email')
 
 async function sendEmailNotificaiton(email)
 {
