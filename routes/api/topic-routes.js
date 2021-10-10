@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
     item4: req.body.newItem4,
     item5: req.body.newItem5,
     vote_tally: 1,
-    user_id: "test"
+    user_id: req.session.user_id
   })
   .then(dbTopicsData => res.json(dbTopicsData))
   .catch(err => {

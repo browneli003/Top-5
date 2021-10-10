@@ -36,4 +36,4 @@ async function newTopic(event)
     };
 }
 
-document.querySelector('.createNewTopic').addEventListener('submit', newTopic);
+document.querySelector('.newTopicForm').addEventListener('submit', newTopic);
