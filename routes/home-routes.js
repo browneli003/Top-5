@@ -46,4 +46,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// render new topic page
+router.get('/createNewTopic', (req, res) => {
+  res.render('createNewTopic');
+});
+
 module.exports = router;
