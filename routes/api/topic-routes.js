@@ -10,6 +10,11 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
      'topic',
+     'item1',
+     'item2',
+     'item3',
+     'item4',
+     'item5',
      'vote_tally'
     ],
     include: {
@@ -37,8 +42,13 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'topic',
-      'vote_tally'
+     'topic',
+     'item1',
+     'item2',
+     'item3',
+     'item4',
+     'item5',
+     'vote_tally'
     ],
     include: {
       model: User,
@@ -55,9 +65,14 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Topics.create({
-    topic: req.body.topic,
-    vote_tally: req.body.vote_tally,
-    user_id: req.body.user_id
+    topic: req.body.newTopic,
+    item1: req.body.newItem1,
+    item2: req.body.newItem2,
+    item3: req.body.newItem3,
+    item4: req.body.newItem4,
+    item5: req.body.newItem5,
+    vote_tally: 1,
+    user_id: req.session.user_id
   })
   .then(dbTopicsData => res.json(dbTopicsData))
   .catch(err => {
