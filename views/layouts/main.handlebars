@@ -11,7 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <link rel="stylesheet" href="/css/stylesheet.css" />
 </head>
 
@@ -27,9 +27,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     {{#if loggedIn}}
-
-                    <button class="btn btn-success" id="createNewTopic">Create New Topic</button>
-
+                    <a href="/createNewTopic" class="btn btn-success" role="button">Create New Topic</a>                                  
                     {{/if}}
                     </div>
                 </li>
